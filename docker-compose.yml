@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mariadb:10.6
+    container_name: bookstack_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: bookstack
+      MYSQL_USER: bookstack
+      MYSQL_PASSWORD: bookstackpass
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpassword"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+
+  bookstack:
+    image: linuxserver/bookstack:latest
+    container_name: bookstack_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PUID: 1000
+      PGID: 1000
+      APP_URL: http://localhost:6875
+      DB_HOST: db
+      DB_USER: bookstack
+      DB_PASS: bookstackpass
+      DB_DATABASE: bookstack
+      APP_KEY: base64:X9gMq8TB2x0ahnj3/Zp5QtnzkUBXsDo+5DAvFBHLmXU=
+    ports:
+      - 6875:80
+    volumes:
+      - bookstack_data:/config
+
+volumes:
+  db_data:
+  bookstack_data:
