@@ -4,10 +4,10 @@ services:
     container_name: bookstack_db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: bookstack
-      MYSQL_USER: bookstack
-      MYSQL_PASSWORD: bookstackpass
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
@@ -36,6 +36,40 @@ services:
       - 6875:80
     volumes:
       - bookstack_data:/config
+
+  botpress:
+    image: botpress/server:latest
+    container_name: botpress
+    restart: unless-stopped
+    environment:
+      BP_PRODUCTION: false
+      BP_HTTP_PORT: 3000
+      EXTERNAL_URL: http://localhost:3000
+      BOOKSTACK_BASEURL: http://bookstack:6875
+      BOOKSTACK_TOKEN_ID: ${BOOKSTACK_TOKEN_ID}
+      BOOKSTACK_TOKEN_SECRET: REPLACE_TOKEN_SECRET
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/botpress/data
+    networks:
+      - botnet
+
+  bridge:
+    build: ./bridge
+    container_name: googlechat_bridge
+    restart: unless-stopped
+    environment:
+      - BP_BASE=http://botpress:3000
+      - BOT_ID=my-bot
+    ports:
+      - "8080:8080"
+    networks:
+      - botnet
+
+networks:
+  botnet:
+    driver: bridge
 
 volumes:
   db_data:
