@@ -10,6 +10,8 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - botnet
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpassword"]
       interval: 10s
@@ -17,7 +19,7 @@ services:
       timeout: 5s
 
   bookstack:
-    image: linuxserver/bookstack:latest
+    image: linuxserver/bookstack:25.07.2
     container_name: bookstack_app
     restart: unless-stopped
     depends_on:
@@ -28,17 +30,19 @@ services:
       PGID: 1000
       APP_URL: http://localhost:6875
       DB_HOST: db
-      DB_USER: bookstack
-      DB_PASS: bookstackpass
-      DB_DATABASE: bookstack
-      APP_KEY: base64:X9gMq8TB2x0ahnj3/Zp5QtnzkUBXsDo+5DAvFBHLmXU=
+      DB_USER: ${DB_USERNAME}
+      DB_PASS: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
+      APP_KEY: ${APP_KEY}
     ports:
       - 6875:80
     volumes:
       - bookstack_data:/config
+    networks:
+      - botnet
 
   botpress:
-    image: botpress/server:latest
+    image: botpress/server:12.31.10
     container_name: botpress
     restart: unless-stopped
     environment:
@@ -47,7 +51,7 @@ services:
       EXTERNAL_URL: http://localhost:3000
       BOOKSTACK_BASEURL: http://bookstack:6875
       BOOKSTACK_TOKEN_ID: ${BOOKSTACK_TOKEN_ID}
-      BOOKSTACK_TOKEN_SECRET: REPLACE_TOKEN_SECRET
+      BOOKSTACK_TOKEN_SECRET: ${BOOKSTACK_TOKEN_SECRET}
     ports:
       - "3000:3000"
     volumes:
