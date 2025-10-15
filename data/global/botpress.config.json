@@ -127,7 +127,10 @@
     }
   },
   "superAdmins": [
-    {}
+    {
+      "email": "ebenitez704@alumnos.iua.edu.ar",
+      "strategy": "default"
+    }
   ],
   "sendUsageStats": true,
   "dataRetention": {
