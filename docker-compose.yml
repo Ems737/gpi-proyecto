@@ -26,14 +26,17 @@ services:
       db:
         condition: service_healthy
     environment:
-      PUID: 1000
-      PGID: 1000
-      APP_URL: http://localhost:6875
-      DB_HOST: db
-      DB_USER: ${DB_USERNAME}
-      DB_PASS: ${DB_PASSWORD}
-      DB_DATABASE: ${DB_DATABASE}
-      APP_KEY: ${APP_KEY}
+      - PUID=1000
+      - PGID=1000
+      - APP_URL=http://localhost:6875
+      - DB_HOST=db
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_SSLMODE=DISABLED
+      - DB_SSL_MODE=DISABLED
+      - APP_KEY=${APP_KEY}
+      - DB_PARAMS="?useSSL=false"
     ports:
       - 6875:80
     volumes:
