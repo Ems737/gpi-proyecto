@@ -127,10 +127,7 @@
     }
   },
   "superAdmins": [
-    {
-      "email": "ebenitez704@alumnos.iua.edu.ar",
-      "strategy": "default"
-    }
+    {}
   ],
   "sendUsageStats": true,
   "dataRetention": {
@@ -210,5 +207,5 @@
     "entriesLimit": 1000
   },
   "version": "12.31.10",
-  "appSecret": "xtxqFV84lSrlQOKd1YlQhvx9PVbob6hjXxD_m01b"
+  "appSecret": "Uv8K3ZyH2o8Yr66T3RvCI0QUl-O2CpZKz9MSuibA"
 }
