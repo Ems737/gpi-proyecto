@@ -1,0 +1,70 @@
+[
+  {
+    "id": "builtin_text-AgqU7u",
+    "formData": {
+      "text$en": "Hola, soy tu asistente para buscar soluciones anteriores o guardar nuevas",
+      "markdown$en": false,
+      "typing$en": true,
+      "text$es": "Hola, soy tu asistente para buscar soluciones anteriores o guardar nuevas",
+      "typing$es": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-21T18:45:34.705Z",
+    "modifiedOn": "2025-10-21T19:14:00.559Z"
+  },
+  {
+    "id": "builtin_text-yryq5H",
+    "formData": {
+      "text$es": "Perfecto. Por favor, escribe la solución completa que quieres buscar.",
+      "markdown$es": false,
+      "typing$es": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-22T18:58:09.488Z",
+    "modifiedOn": "2025-10-28T12:27:12.832Z"
+  },
+  {
+    "id": "builtin_text-HRJcmH",
+    "formData": {
+      "text$es": "Entrada invalida",
+      "markdown$es": false,
+      "typing$es": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-27T14:54:31.494Z",
+    "modifiedOn": "2025-10-27T14:54:31.494Z"
+  },
+  {
+    "id": "builtin_text-LGqcCu",
+    "formData": {
+      "text$es": "{{temp.guardado_status}}",
+      "markdown$es": false,
+      "typing$es": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-27T15:55:29.574Z",
+    "modifiedOn": "2025-10-28T17:15:44.489Z"
+  },
+  {
+    "id": "builtin_text-AONYaV",
+    "formData": {
+      "text$es": "Algo",
+      "markdown$es": false,
+      "typing$es": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-27T16:00:43.591Z",
+    "modifiedOn": "2025-10-27T16:00:43.591Z"
+  },
+  {
+    "id": "builtin_text-v-dfV4",
+    "formData": {
+      "text$es": "{{temp.busqueda_resultado}}",
+      "markdown$es": false,
+      "typing$es": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-28T17:16:37.539Z",
+    "modifiedOn": "2025-10-28T17:16:37.539Z"
+  }
+]

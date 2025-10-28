@@ -10,7 +10,7 @@
 #volumes:
 #  botpress_data:
 #
-sudo chown -R 999:999 ./data
+#sudo chown -R 999:999 ./data
 
 docker compose up -d --build
 

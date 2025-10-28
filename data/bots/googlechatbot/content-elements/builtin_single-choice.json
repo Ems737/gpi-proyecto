@@ -1,0 +1,26 @@
+[
+  {
+    "id": "builtin_single-choice-xqGV2W",
+    "formData": {
+      "dropdownPlaceholder$es": "Opciones",
+      "choices$es": [
+        {
+          "title": "Guardar",
+          "value": "Guardar"
+        },
+        {
+          "title": "Buscar",
+          "value": "Buscar"
+        }
+      ],
+      "markdown$es": false,
+      "disableFreeText$es": false,
+      "displayInMessage$es": false,
+      "typing$es": true,
+      "text$es": "Elija el comando a ejecutar"
+    },
+    "createdBy": "admin",
+    "createdOn": "2025-10-22T19:22:25.018Z",
+    "modifiedOn": "2025-10-22T19:22:25.018Z"
+  }
+]

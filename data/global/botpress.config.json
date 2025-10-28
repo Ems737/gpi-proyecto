@@ -128,7 +128,7 @@
   },
   "superAdmins": [
     {
-      "email": "ebenitez704@alumnos.iua.edu.ar",
+      "email": "ttissera754@alumnos.iua.edu.ar",
       "strategy": "default"
     }
   ],
@@ -210,5 +210,5 @@
     "entriesLimit": 1000
   },
   "version": "12.31.10",
-  "appSecret": "Uv8K3ZyH2o8Yr66T3RvCI0QUl-O2CpZKz9MSuibA"
+  "appSecret": "tmclzLxpQt2QyOF4cvLlPCaEhrajhxT4z2GWcDN1"
 }

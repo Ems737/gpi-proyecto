@@ -3,7 +3,9 @@
     "id": "default",
     "name": "Default",
     "audience": "external",
-    "bots": [],
+    "bots": [
+      "googlechatbot"
+    ],
     "roles": [
       {
         "id": "admin",
