@@ -1,0 +1,30 @@
+{
+  "name": "lenguage",
+  "utterances": {
+    "es": [
+      "H﻿ola",
+      "Q﻿uiero guardar una solucion",
+      "Q﻿uiero buscar una solucion",
+      "N﻿ecesito una solucion",
+      "/﻿guardar",
+      "/﻿buscar",
+      "h﻿elp",
+      "/﻿help",
+      "C﻿omo guardo una solucion?",
+      "C﻿omo busco una solucion?"
+    ]
+  },
+  "slots": [
+    {
+      "id": "ltVOMC28dd-utIwJA6gKe",
+      "name": "slot1",
+      "entities": [
+        "any"
+      ],
+      "color": 1
+    }
+  ],
+  "contexts": [
+    "global"
+  ]
+}

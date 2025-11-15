@@ -127,7 +127,10 @@
     }
   },
   "superAdmins": [
-    {}
+    {
+      "email": "ttissera754@alumnos.iua.edu.ar",
+      "strategy": "default"
+    }
   ],
   "sendUsageStats": true,
   "dataRetention": {
@@ -207,5 +210,5 @@
     "entriesLimit": 1000
   },
   "version": "12.31.10",
-  "appSecret": "hr1ElkemBHt1p3rKdKFf5qXwh_s49By612z3thAR"
+  "appSecret": "tmclzLxpQt2QyOF4cvLlPCaEhrajhxT4z2GWcDN1"
 }

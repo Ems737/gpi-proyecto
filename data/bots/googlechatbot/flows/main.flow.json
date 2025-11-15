@@ -1,0 +1,142 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "Nodo-Bienvenida",
+  "nodes": [
+    {
+      "id": "entry",
+      "name": "Nodo-Bienvenida",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Opciones"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-AgqU7u"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "a49267a6d0",
+      "name": "Pregunta-guardar",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Guardar"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-yryq5H"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-73d941",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Opciones",
+      "flow": "skills/choice-73d941.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Guardar]",
+          "condition": "temp['skill-choice-ret-jypa88ynku'] == \"Guardar\"",
+          "node": "Pregunta-guardar"
+        },
+        {
+          "caption": "User picked [Buscar]",
+          "condition": "temp['skill-choice-ret-jypa88ynku'] == \"Buscar\"",
+          "node": "Pregunta-buscar"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "dca653e7cd",
+      "name": "Guardar",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Resultado-Guardado"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": [
+        "guardar {\"bp\":\"\",\"sdk\":\"\",\"event\":\"\",\"args\":\"\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5293163905",
+      "name": "Resultado-Guardado",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "Opciones"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-LGqcCu"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "85ec95bcc1",
+      "name": "Pregunta-buscar",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Buscar"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-yryq5H"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "e9c8e6b680",
+      "name": "Buscar",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Resultado-Buscado"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": [
+        "buscar {}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5bbff34e7d",
+      "name": "Resultado-Buscado",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "Opciones"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-v-dfV4"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}
