@@ -25,7 +25,7 @@
     try {
       bp.logger.info('--- Pasando httpAgent a axios:', httpAgent)
       const res = await axios.post(
-        'http://172.21.0.4:80/api/pages',
+        'http://172.21.0.6:80/api/pages',
         {
           name: 'Solución guardada desde Chatbot',
           markdown: texto,
@@ -33,7 +33,7 @@
         },
         {
           headers: {
-            Authorization: `Token sEzwUP8IYhGzdXXlPnj7Zb0YpivIWTzw:Lskj6byNQTELaNiMgiT9Ujw66ZsctxpL`
+            Authorization: `Token irtfQvI0jOsRG40OloDO7vjTnxbhp5Va:QI7E3o6kN2PpN96V4EWwZG6BynCcIP0u`
           },
           // 3. LE PASAMOS EL AGENTE IPV4 A AXIOS
           httpAgent: httpAgent

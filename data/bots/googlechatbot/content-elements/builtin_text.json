@@ -15,13 +15,13 @@
   {
     "id": "builtin_text-yryq5H",
     "formData": {
-      "text$es": "Perfecto. Por favor, escribe la solución completa que quieres buscar.",
+      "text$es": "Perfecto. Por favor, escribe la solución completa que quieres guardar.",
       "markdown$es": false,
       "typing$es": true
     },
     "createdBy": "admin",
     "createdOn": "2025-10-22T18:58:09.488Z",
-    "modifiedOn": "2025-10-28T12:27:12.832Z"
+    "modifiedOn": "2025-11-15T23:55:14.361Z"
   },
   {
     "id": "builtin_text-HRJcmH",

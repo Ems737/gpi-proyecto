@@ -6,7 +6,7 @@ const app = express()
 app.use(bodyParser.json())
 
 const BP_BASE = process.env.BP_BASE || 'http://localhost:3000'
-const BOT_ID = process.env.BOT_ID || 'my-bot'
+const BOT_ID = process.env.BOT_ID || 'googlechatbot'
 
 app.post('/googlechat-webhook', async (req, res) => {
   try {

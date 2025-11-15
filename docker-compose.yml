@@ -68,7 +68,7 @@ services:
     restart: unless-stopped
     environment:
       - BP_BASE=http://botpress:3000
-      - BOT_ID=my-bot
+      - BOT_ID=googlechatbot
     ports:
       - "8080:8080"
     networks:
