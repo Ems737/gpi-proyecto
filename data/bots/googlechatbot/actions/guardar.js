@@ -22,12 +22,25 @@
       return
     }
 
+    /**
+     * --- TOMAR SOLO LA PRIMERA LÍNEA PARA EL TÍTULO ---
+     */
+    let primeraLinea = texto.split('\n')[0] // hasta el primer enter
+    primeraLinea = primeraLinea.trim()
+
+    // Limpiar caracteres raros y limitar a 60 caracteres
+    const tituloLimpio = primeraLinea.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ \-_]/g, '').substring(0, 60)
+    user.count_guardados = (user.count_guardados || 0) + 1
+
+    // Combinar ID incremental + título limpio
+    const titulo = `Solución #${user.count_guardados} - ${tituloLimpio}`
+
     try {
       bp.logger.info('--- Pasando httpAgent a axios:', httpAgent)
       const res = await axios.post(
         'http://172.19.0.4:80/api/pages',
         {
-          name: 'Solución guardada desde Chatbot',
+          name: titulo,
           markdown: texto,
           book_id: 1
         },
